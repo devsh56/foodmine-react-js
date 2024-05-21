@@ -1,15 +1,14 @@
-import { connect, set } from 'mongoose';
-import { UserModel } from '../models/user.model.js';
-import { FoodModel } from '../models/food.model.js';
-import { sample_users } from '../data.js';
-import { sample_foods } from '../data.js';
 import bcrypt from 'bcryptjs';
+import { connect, set } from 'mongoose';
+import { sample_foods, sample_users } from '../data.js';
+import { FoodModel } from '../models/food.model.js';
+import { UserModel } from '../models/user.model.js';
 const PASSWORD_HASH_SALT_ROUNDS = 10;
 set('strictQuery', true);
 
 export const dbconnect = async () => {
   try {
-    connect(process.env.MONGO_URI, {
+    connect("mongodb://localhost:27017/Food_Order", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

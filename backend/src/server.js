@@ -1,15 +1,15 @@
-import dotenv from 'dotenv';
-dotenv.config();
-import { fileURLToPath } from 'url';
-import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
+import express from 'express';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { dbconnect } from './config/database.config.js';
 import foodRouter from './routers/food.router.js';
-import userRouter from './routers/user.router.js';
 import orderRouter from './routers/order.router.js';
 import uploadRouter from './routers/upload.router.js';
+import userRouter from './routers/user.router.js';
+dotenv.config();
 
-import { dbconnect } from './config/database.config.js';
-import path, { dirname } from 'path';
 dbconnect();
 
 const __filename = fileURLToPath(import.meta.url);

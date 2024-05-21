@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import classes from './map.module.css';
+import * as L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { useEffect, useState } from 'react';
 import {
   MapContainer,
-  TileLayer,
   Marker,
   Popup,
+  TileLayer,
   useMapEvents,
 } from 'react-leaflet';
 import { toast } from 'react-toastify';
-import * as L from 'leaflet';
+import classes from './map.module.css';
 
 export default function Map({ readonly, location, onChange }) {
   return (

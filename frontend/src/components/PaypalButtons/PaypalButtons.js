@@ -3,12 +3,12 @@ import {
   PayPalScriptProvider,
   usePayPalScriptReducer,
 } from '@paypal/react-paypal-js';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { useCart } from '../../hooks/useCart';
 import { useLoading } from '../../hooks/useLoading';
 import { pay } from '../../services/orderService';
-import { useCart } from '../../hooks/useCart';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 
 export default function PaypalButtons({ order }) {
   return (

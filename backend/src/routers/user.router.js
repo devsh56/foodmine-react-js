@@ -1,12 +1,12 @@
-import { Router } from 'express';
-import jwt from 'jsonwebtoken';
-const router = Router();
-import { BAD_REQUEST } from '../constants/httpStatus.js';
-import handler from 'express-async-handler';
-import { UserModel } from '../models/user.model.js';
 import bcrypt from 'bcryptjs';
-import auth from '../middleware/auth.mid.js';
+import { Router } from 'express';
+import handler from 'express-async-handler';
+import jwt from 'jsonwebtoken';
+import { BAD_REQUEST } from '../constants/httpStatus.js';
 import admin from '../middleware/admin.mid.js';
+import auth from '../middleware/auth.mid.js';
+import { UserModel } from '../models/user.model.js';
+const router = Router();
 const PASSWORD_HASH_SALT_ROUNDS = 10;
 
 router.post(
@@ -161,7 +161,7 @@ const generateTokenResponse = user => {
       email: user.email,
       isAdmin: user.isAdmin,
     },
-    process.env.JWT_SECRET,
+    "dkfskjhdflksaflsjkdlsdfsl",
     {
       expiresIn: '30d',
     }
